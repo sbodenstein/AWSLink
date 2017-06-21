@@ -1,0 +1,48 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AWS Link", \
+"Title",ExpressionUUID->"6195f417-28fa-456d-b7e0-f41491621f7d"],
+
+Cell[BoxData[{
+ RowBox[{"PacletDirectoryAdd", "[", 
+  RowBox[{"{", 
+   RowBox[{"ParentDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "}"}], "]"}], "\n", 
+ RowBox[{"<<", " ", 
+  "AWSLink`"}]}], \
+"Code",ExpressionUUID->"25613c0a-08cb-4b90-a4f5-1b6e7e9f52d7"],
+
+Cell["Simple Example:", \
+"Item",ExpressionUUID->"ccf9c712-6744-4871-ac40-b732d6943a46"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AWSRegionNames", "[", 
+  "]"}]], "Input",ExpressionUUID->"69985b58-948f-4b76-9d2d-9498fd9d223e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GovCloud\"\>", ",", "\<\"US_EAST_1\"\>", 
+   ",", "\<\"US_EAST_2\"\>", ",", "\<\"US_WEST_1\"\>", 
+   ",", "\<\"US_WEST_2\"\>", ",", "\<\"EU_WEST_1\"\>", 
+   ",", "\<\"EU_WEST_2\"\>", ",", "\<\"EU_CENTRAL_1\"\>", 
+   ",", "\<\"AP_SOUTH_1\"\>", ",", "\<\"AP_SOUTHEAST_1\"\>", 
+   ",", "\<\"AP_SOUTHEAST_2\"\>", ",", "\<\"AP_NORTHEAST_1\"\>", 
+   ",", "\<\"AP_NORTHEAST_2\"\>", ",", "\<\"SA_EAST_1\"\>", 
+   ",", "\<\"CN_NORTH_1\"\>", ",", "\<\"CA_CENTRAL_1\"\>"}], 
+  "}"}]], "Output",ExpressionUUID->"f2c4605d-29da-4da2-adf2-46e91494529b"]
+}, Open  ]]
+}, Open  ]]
+},
+Evaluator->"Local",
+InitializationCellEvaluation->False,
+WindowSize->{1063, 788},
+WindowMargins->{{Automatic, 140}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 8, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+
