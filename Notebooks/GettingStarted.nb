@@ -4,16 +4,23 @@ Cell[CellGroupData[{
 Cell["AWS Link", \
 "Title",ExpressionUUID->"6195f417-28fa-456d-b7e0-f41491621f7d"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{"PacletDirectoryAdd", "[", 
   RowBox[{"{", 
    RowBox[{"ParentDirectory", "[", 
     RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "}"}], "]"}], "\n", 
- RowBox[{"<<", " ", 
-  "AWSLink`"}]}], \
-"Code",ExpressionUUID->"25613c0a-08cb-4b90-a4f5-1b6e7e9f52d7"],
+ RowBox[{"<<", " ", "AWSLink`"}], "\n", 
+ RowBox[{"<<", 
+  "JLink`"}]}], "Code",ExpressionUUID->"25613c0a-08cb-4b90-a4f5-1b6e7e9f52d7"],
 
-Cell["Simple Example:", \
+Cell[BoxData[
+ RowBox[{"{", "\<\"/Users/sebastianb/git/AWSLink\"\>", 
+  "}"}]], "Output",ExpressionUUID->"ca6505e1-095f-473d-b11a-f57365a89a5d"]
+}, Open  ]],
+
+Cell["Simple example:", \
 "Item",ExpressionUUID->"ccf9c712-6744-4871-ac40-b732d6943a46"],
 
 Cell[CellGroupData[{
@@ -32,7 +39,152 @@ Cell[BoxData[
    ",", "\<\"AP_SOUTHEAST_2\"\>", ",", "\<\"AP_NORTHEAST_1\"\>", 
    ",", "\<\"AP_NORTHEAST_2\"\>", ",", "\<\"SA_EAST_1\"\>", 
    ",", "\<\"CN_NORTH_1\"\>", ",", "\<\"CA_CENTRAL_1\"\>"}], 
-  "}"}]], "Output",ExpressionUUID->"f2c4605d-29da-4da2-adf2-46e91494529b"]
+  "}"}]], "Output",ExpressionUUID->"cac6f177-9557-4356-93f9-37ca6b977f84"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Login", \
+"Subchapter",ExpressionUUID->"6e649947-a273-420a-8d09-2c5f448e85ef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"c", "=", 
+  RowBox[{
+  "EC2ClientCreate", "[", 
+   "]"}]}]], "Input",ExpressionUUID->"1da35cb6-2160-4223-9186-76143df78a78"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["EC2ClientObject",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"BoxForm`SummaryItem", "[", 
+             RowBox[{"{", "}"}], "]"}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"BoxForm`SummaryItem", "[", 
+             RowBox[{"{", "}"}], "]"}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  AWSLink`EC2ClientObject[JLink`Objects`vm1`JavaObject16781183744475137],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->
+   False]], "Output",ExpressionUUID->"5eba63c1-cd5f-4d03-9b4e-c62a2e655ca1"]
+}, Open  ]],
+
+Cell["If the above fails, see \[OpenCurlyDoubleQuote]Setting up credentials\
+\[CloseCurlyDoubleQuote] below.", \
+"Item",ExpressionUUID->"549ca5ac-d86c-418d-bbcd-d462d25afee9"],
+
+Cell[CellGroupData[{
+
+Cell["Setting up credentials", \
+"Subsection",ExpressionUUID->"eba1a349-cef4-4198-b1c7-2d6ff26cca48"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "You always require and ",
+ StyleBox["aws_access_key_id",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["aws_secret_access_key",
+  FontWeight->"Bold"],
+ ". Will assume you have these"
+}], "Item",ExpressionUUID->"8e1020bb-a137-4508-a3f5-fba0e8bd95ac"],
+
+Cell["setting these up is usually done via the AWS Console", \
+"Subitem",ExpressionUUID->"200e70cc-58cc-4446-8559-6d686dba74e4"],
+
+Cell["This explains how to set up credentials on system:", \
+"Item",ExpressionUUID->"639d02c2-f43a-498d-9ae7-6f7cfc4dadd9"],
+
+Cell[TextData[ButtonBox["http://docs.aws.amazon.com/sdk-for-java/v1/developer-\
+guide/setup-credentials.html",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-\
+credentials.html"], None},
+ ButtonNote->
+  "http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-\
+credentials.html"]], \
+"Subitem",ExpressionUUID->"52c13a92-9ee9-43c6-ac24-5553cb88cea4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fast Lane: OSX", \
+"Subsubsection",ExpressionUUID->"47de7a26-a5dd-4e41-876f-986990564bc2"],
+
+Cell[CellGroupData[{
+
+Cell["brew install awscli", \
+"Item",ExpressionUUID->"3edf1a65-7744-4d0c-b1ae-f0e60276f309"],
+
+Cell["aws configure", \
+"Item",ExpressionUUID->"b8486e51-fe7d-48b6-91ec-1fa6a539da63"],
+
+Cell[TextData[{
+ "enter ",
+ StyleBox["aws_access_key_id",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["aws_secret_access_key + ",
+  FontWeight->"Bold"],
+ "aws region to use (they are not capitalized, and of form \
+\[OpenCurlyDoubleQuote]us-east-1\[CloseCurlyDoubleQuote])"
+}], "Item",ExpressionUUID->"c45bb666-6e44-479c-a1c3-7f1b0d0084a0"],
+
+Cell["You are ready!", \
+"Subitem",ExpressionUUID->"71e5cf23-e9dc-486a-ada6-024b5db6ae4a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
